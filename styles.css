@@ -1,6 +1,7 @@
 @font-face {
     font-family: 'Herbus Pointy';
-    src: url('herbus-pointy.ttf') format('truetype');
+    src: url('./herbus-pointy.ttf') format('truetype');
+    font-display: swap;
 }
 
 * {
