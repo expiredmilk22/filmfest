@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: hidden; /* Prevents unwanted scrolling */
+    overflow: hidden; /* Prevents scrolling */
 }
 
 /* Background Video */
@@ -11,11 +11,15 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Center the video */
-    width: 100vw;  /* Full width of the viewport */
-    height: 100vh; /* Full height of the viewport */
-    max-width: 100%; /* Ensures the video doesn't exceed its original size */
-    max-height: 100%; /* Ensures the video doesn't exceed its original size */
-    object-fit: contain; /* Ensures the entire video is visible without cropping */
+    transform: translate(-50%, -50%); /* Centers video */
+    
+    width: auto;
+    height: auto;
+    
+    min-width: 100vw; /* Ensures video is wide enough */
+    min-height: 100vh; /* Ensures video is tall enough */
+    
+    object-fit: scale-down; /* Keeps original aspect ratio */
     z-index: -1;
+    background-color: black; /* Prevents empty space from being white */
 }
