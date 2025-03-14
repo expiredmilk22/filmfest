@@ -28,12 +28,30 @@
             left: 0;
             width: 100vw;
             height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         video {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Keeps aspect ratio while making sure it fits */
+            object-fit: contain; /* Maintains aspect ratio with black bars where necessary */
+        }
+
+        /* Hide mobile video by default */
+        .mobile-video {
+            display: none;
+        }
+
+        /* Show mobile video and hide desktop video on small screens */
+        @media (max-width: 768px) {
+            .desktop-video {
+                display: none;
+            }
+            .mobile-video {
+                display: flex; /* Ensures the mobile video container is visible */
+            }
         }
 
         /* Form Container */
@@ -62,21 +80,31 @@
             border-radius: 10px;
         }
 
-        /* Ensures the form stays pinned at the same relative position */
+        /* Mobile-specific adjustments */
         @media (max-width: 768px) {
             .form-container {
-                top: 70%; /* Adjusts for smaller screens */
-                height: 50vh; /* Keeps it smaller on phones */
+                top: 60%; /* Move it higher */
+                width: 95vw; /* Slightly wider for better spacing */
+                height: 40vh; /* Smaller form */
+                background: rgba(0, 0, 0, 0.7); /* Darker for better readability */
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Video Background -->
-    <div class="video-container">
-        <video autoplay loop muted playsinline>
+    <!-- Video Background for Desktop -->
+    <div class="video-container desktop-video">
+        <video autoplay muted loop playsinline preload="auto">
             <source src="https://ia600109.us.archive.org/4/items/mountain-fest/mountain%20fest.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Video Background for Mobile -->
+    <div class="video-container mobile-video">
+        <video autoplay muted loop playsinline preload="auto">
+            <source src="https://ia600707.us.archive.org/25/items/mountain-fest-iphoen/mountain%20fest%20iphoen.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
