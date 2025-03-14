@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: hidden; /* Prevent unwanted scrolling */
+    overflow: hidden; /* Prevents unwanted scrolling */
 }
 
 /* Background Video */
@@ -12,10 +12,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); /* Center the video */
-    min-width: 100vw; /* Minimum width covers the viewport */
-    min-height: 100vh; /* Minimum height covers the viewport */
-    width: auto; /* Maintain original aspect ratio */
-    height: auto; /* Maintain original aspect ratio */
-    object-fit: contain; /* Ensures the whole video fits without cropping */
+    width: 100vw;  /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    max-width: 100%; /* Ensures the video doesn't exceed its original size */
+    max-height: 100%; /* Ensures the video doesn't exceed its original size */
+    object-fit: contain; /* Ensures the entire video is visible without cropping */
     z-index: -1;
 }
