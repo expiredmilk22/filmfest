@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-/* Background Video */
+/* Background Video (Ocean Waves) */
 #bg-video {
     position: fixed;
     top: 0;
@@ -16,14 +16,17 @@
     z-index: -1;
 }
 
-/* Overlay WebM Video */
+/* Overlay WebM Video (Title Animation) */
 #logo-video {
     position: absolute;
-    top: 15%; /* Adjust placement */
+    top: 15%;
     left: 50%;
     transform: translate(-50%, 0);
     width: auto;
-    height: 200px; /* Adjust size */
+    height: 200px; /* Adjust as needed */
     pointer-events: none;
+
+    /* Attempt to remove white background */
     mix-blend-mode: multiply;
+    filter: brightness(0) invert(1);
 }
